@@ -1,0 +1,46 @@
+server:
+  port: 40045
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: logs
+      suffix: .txt
+      prefix: localhost_access_log
+      file-date-format: .yyyy-MM-dd
+      pattern: common
+    basedir: .
+
+tomcat:
+  ajp:
+    protocol: AJP/1.3
+    port: 11040
+
+tcp:
+  target:
+    ip: '127.0.0.1'
+    port: '12007'
+  timeout: '20'
+
+--- #LOCAL
+spring:
+  config:
+    activate:
+      on-profile: "server-local"
+
+
+--- #DEV
+spring:
+  config:
+    activate:
+      on-profile: "server-dev"
+
+
+--- #PROD
+spring:
+  config:
+    activate:
+      on-profile: "server-prod"

@@ -1,0 +1,86 @@
+management:
+  server:
+    port: 15521
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "*"
+      base-path: "/syshealth"
+  endpoint:
+    env:
+      enabled: true
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    httptrace:
+      enabled: true
+    metrics:
+      enabled: true
+    logfile:
+      enabled: true
+#  metrics:
+#    export:
+#      elastic:
+#        enabled: true
+#        index: api_fc_firmserver
+#        host: "http://localhost:9200"
+#        auto-create-index: false
+#        step: 10s
+#    tags:
+#      application: "API_FC_FirmServer"
+#      host: "local-ap"
+#    web:
+#      server:
+#        request:
+#          autotime:
+#            enabled: true
+
+--- #LOCAL
+spring:
+  config:
+    activate:
+      on-profile: "sys-local"
+#  boot:
+#    admin:
+#      client:
+#        url: "http://localhost:16623"
+#        instance:
+#          service-url: "http://localhost:40045"
+#          management-base-url: "http://localhost:15521"
+#          name: '펌뱅킹 외화 API'
+#
+#
+#logging:
+#  level:
+#    com.zaxxer.hikari.HikariConfig: DEBUG
+#    com.zaxxer.hikari: TRACE
+#  config: 'classpath:logback.xml'
+#  file:
+#    name: 'C:/Users/khcho/IdeaProjects/api_fmbk_fc/logs/application.log'
+
+--- #DEV
+spring:
+  config:
+    activate:
+      on-profile: "sys-dev"
+#  boot:
+#    admin:
+#      client:
+#        url: "http://localhost:16623"
+#        instance:
+#          service-url: "http://localhost:11040"
+#          management-base-url: "http://localhost:15521"
+#          name: '펌뱅킹 외화 API'
+#logging:
+#  config: 'classpath:logback.xml'
+#  file:
+#    name: '/dozn/was/app/API_RT_FC_FirmServer/logs/application.log'
+
+--- #PROD
+spring:
+  config:
+    activate:
+      on-profile: "sys-prod"

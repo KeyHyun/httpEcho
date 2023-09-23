@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active:
+      - local
+    group:
+      local:
+#        - db-local
+        - server-local
+        - sys-local
+      dev:
+#        - db-dev
+        - server-dev
+        - sys-dev
+      prod:
+#        - db-prod
+        - server-prod
+        - sys-prod
+  config:
+    import:
+#      - classpath:/application-db.yml
+      - classpath:/application-server.yml
+      - classpath:/application-sys.yml

@@ -1,0 +1,1212 @@
+[2023-09-23 17:32:06.423:758][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 19052 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:32:06.425:760][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:32:07.782:2117][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:32:07.792:2127][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:32:07.792:2127][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:32:07.792:2127][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:32:07.924:2259][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:32:07.925:2260][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1459 ms
+[2023-09-23 17:32:07.965:2300][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 10s
+[2023-09-23 17:32:07.965:2300][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 10s
+[2023-09-23 17:32:08.471:2806][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:32:08.489:2824][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:32:08.551:2886][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:32:08.552:2887][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:32:08.552:2887][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:32:08.552:2887][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:32:08.569:2904][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:32:08.569:2904][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 76 ms
+[2023-09-23 17:32:08.578:2913][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 5 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:32:08.602:2937][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:32:08.604:2939][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:32:08.615:2950][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.653 seconds (JVM running for 3.146)
+[2023-09-23 17:32:10.754:5089][registrationTask1] [] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=펌뱅킹 외화 API, managementUrl=http://localhost:15521/syshealth, healthUrl=http://localhost:15521/syshealth/health, serviceUrl=http://localhost:40045) at spring-boot-admin ([http://localhost:16623/instances]): I/O error on POST request for "http://localhost:16623/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+[2023-09-23 17:32:11.028:5363][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:32:21.018:15353][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:32:31.012:25347][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:32:41.022:35357][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:32:51.013:45348][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:33:01.020:55355][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:33:11.013:65348][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:33:14.988:765][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 34528 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:33:14.990:767][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:33:16.304:2081][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:33:16.314:2091][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:33:16.315:2092][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:33:16.315:2092][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:33:16.440:2217][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:33:16.440:2217][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1407 ms
+[2023-09-23 17:33:16.474:2251][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:33:16.474:2251][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:33:16.931:2708][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:33:16.947:2724][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:33:17.007:2784][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:33:17.007:2784][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:33:17.008:2785][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:33:17.008:2785][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:33:17.023:2800][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:33:17.023:2800][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 72 ms
+[2023-09-23 17:33:17.034:2811][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:33:17.059:2836][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:33:17.061:2838][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:33:17.071:2848][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.527 seconds (JVM running for 3.144)
+[2023-09-23 17:33:55.364:41141][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:33:55.364:41141][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:33:55.365:41142][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-23 17:34:01.033:46810][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:34:22.478:68255][http-nio-40045-exec-3] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity kr.co.ksite.echo.controller.EchoController.echo(java.lang.String)]
+[2023-09-23 17:34:52.937:98714][http-nio-40045-exec-5] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity kr.co.ksite.echo.controller.EchoController.echo(java.lang.String)]
+[2023-09-23 17:35:01.012:106789][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:35:01.661:107438][http-nio-40045-exec-6] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity kr.co.ksite.echo.controller.EchoController.echo(java.lang.String)]
+[2023-09-23 17:35:07.298:113075][http-nio-40045-exec-7] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity kr.co.ksite.echo.controller.EchoController.echo(java.lang.String)]
+[2023-09-23 17:36:01.011:166788][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:36:30.091:195868][http-nio-40045-exec-10] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+[2023-09-23 17:36:38.031:759][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 23304 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:36:38.033:761][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:36:39.384:2112][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:36:39.396:2124][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:36:39.397:2125][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:36:39.397:2125][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:36:39.531:2259][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:36:39.531:2259][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1455 ms
+[2023-09-23 17:36:39.566:2294][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:36:39.567:2295][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:36:40.023:2751][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:36:40.042:2770][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:36:40.106:2834][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:36:40.106:2834][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:36:40.106:2834][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:36:40.106:2834][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:36:40.127:2855][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:36:40.128:2856][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 82 ms
+[2023-09-23 17:36:40.146:2874][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:36:40.175:2903][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:36:40.178:2906][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:36:40.188:2916][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.614 seconds (JVM running for 3.117)
+[2023-09-23 17:36:43.095:5823][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:36:43.095:5823][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:36:43.096:5824][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:37:01.035:23763][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:37:33.820:757][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 6944 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:37:33.823:760][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:37:35.187:2124][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:37:35.197:2134][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:37:35.197:2134][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:37:35.197:2134][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:37:35.327:2264][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:37:35.327:2264][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1461 ms
+[2023-09-23 17:37:35.364:2301][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:37:35.364:2301][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:37:35.822:2759][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:37:35.838:2775][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:37:35.896:2833][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:37:35.896:2833][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:37:35.896:2833][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:37:35.896:2833][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:37:35.911:2848][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:37:35.911:2848][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 70 ms
+[2023-09-23 17:37:35.922:2859][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:37:35.948:2885][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:37:35.950:2887][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:37:35.960:2897][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.604 seconds (JVM running for 3.098)
+[2023-09-23 17:37:38.306:5243][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:37:38.307:5244][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:37:38.308:5245][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:38:01.018:27955][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:38:10.359:749][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 29056 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:38:10.362:752][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:38:11.679:2069][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:38:11.689:2079][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:38:11.690:2080][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:38:11.690:2080][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:38:11.818:2208][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:38:11.818:2208][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1413 ms
+[2023-09-23 17:38:11.852:2242][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:38:11.853:2243][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:38:12.300:2690][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:38:12.317:2707][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:38:12.375:2765][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:38:12.375:2765][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:38:12.375:2765][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:38:12.375:2765][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:38:12.391:2781][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:38:12.391:2781][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 70 ms
+[2023-09-23 17:38:12.402:2792][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:38:12.426:2816][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:38:12.428:2818][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:38:12.438:2828][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.531 seconds (JVM running for 3.044)
+[2023-09-23 17:38:14.681:5071][http-nio-40045-exec-2] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:38:14.681:5071][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:38:14.682:5072][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:39:01.028:51418][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:39:09.639:745][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 3524 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:39:09.641:747][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:39:11.027:2133][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:39:11.037:2143][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:39:11.037:2143][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:39:11.037:2143][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:39:11.160:2266][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:39:11.160:2266][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1478 ms
+[2023-09-23 17:39:11.204:2310][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:39:11.204:2310][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:39:11.677:2783][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:39:11.694:2800][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:39:11.753:2859][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:39:11.754:2860][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:39:11.754:2860][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:39:11.754:2860][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:39:11.773:2879][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:39:11.773:2879][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 75 ms
+[2023-09-23 17:39:11.782:2888][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:39:11.808:2914][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:39:11.811:2917][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:39:11.821:2927][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.628 seconds (JVM running for 3.126)
+[2023-09-23 17:39:27.372:18478][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:39:27.373:18479][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:39:27.374:18480][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:39:27.406:18512][http-nio-40045-exec-1] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:40:01.030:52136][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:40:07.441:755][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 20748 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:40:07.444:758][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:40:08.796:2110][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:40:08.807:2121][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:40:08.807:2121][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:40:08.807:2121][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:40:08.943:2257][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:40:08.943:2257][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1454 ms
+[2023-09-23 17:40:08.979:2293][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:40:08.979:2293][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:40:09.466:2780][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:40:09.485:2799][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:40:09.557:2871][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:40:09.558:2872][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:40:09.559:2873][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:40:09.559:2873][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:40:09.590:2904][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:40:09.590:2904][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 101 ms
+[2023-09-23 17:40:09.604:2918][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:40:09.636:2950][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:40:09.639:2953][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:40:09.649:2963][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.665 seconds (JVM running for 3.159)
+[2023-09-23 17:40:10.633:3947][http-nio-40045-exec-2] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:40:10.633:3947][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:40:10.634:3948][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-23 17:40:10.666:3980][http-nio-40045-exec-2] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:40:11.587:4901][http-nio-40045-exec-3] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:40:12.257:5571][http-nio-40045-exec-4] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:40:33.922:747][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 19936 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:40:33.924:749][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:40:35.243:2068][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:40:35.254:2079][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:40:35.254:2079][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:40:35.254:2079][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:40:35.376:2201][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:40:35.377:2202][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1411 ms
+[2023-09-23 17:40:35.418:2243][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:40:35.418:2243][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:40:35.844:2669][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:40:35.861:2686][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:40:35.918:2743][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:40:35.918:2743][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:40:35.918:2743][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:40:35.918:2743][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:40:35.933:2758][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:40:35.933:2758][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 69 ms
+[2023-09-23 17:40:35.942:2767][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:40:35.964:2789][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:40:35.967:2792][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:40:35.978:2803][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.504 seconds (JVM running for 3.003)
+[2023-09-23 17:40:41.279:8104][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:40:41.280:8105][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:40:41.281:8106][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:40:41.312:8137][http-nio-40045-exec-1] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:40:44.235:11060][http-nio-40045-exec-3] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid UTF-8 start byte 0x84; nested exception is com.fasterxml.jackson.core.JsonParseException: Invalid UTF-8 start byte 0x84<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 3]]
+[2023-09-23 17:40:45.245:12070][http-nio-40045-exec-5] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid UTF-8 start byte 0x84; nested exception is com.fasterxml.jackson.core.JsonParseException: Invalid UTF-8 start byte 0x84<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 3]]
+[2023-09-23 17:41:01.021:27846][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:41:21.895:48720][http-nio-40045-exec-7] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:41:25.279:52104][http-nio-40045-exec-8] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:41:25.981:52806][http-nio-40045-exec-9] [] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+[2023-09-23 17:42:01.017:87842][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:43:01.022:147847][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:44:01.009:207834][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:45:01.018:267843][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:45:56.490:792][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 15248 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:45:56.493:795][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:45:57.833:2135][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:45:57.843:2145][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:45:57.843:2145][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:45:57.843:2145][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:45:57.974:2276][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:45:57.974:2276][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1439 ms
+[2023-09-23 17:45:58.009:2311][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:45:58.009:2311][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:45:58.464:2766][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:45:58.482:2784][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:45:58.548:2850][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:45:58.548:2850][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:45:58.548:2850][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:45:58.549:2851][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:45:58.565:2867][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:45:58.565:2867][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 80 ms
+[2023-09-23 17:45:58.576:2878][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:45:58.601:2903][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:45:58.603:2905][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:45:58.615:2917][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.614 seconds (JVM running for 3.117)
+[2023-09-23 17:45:59.318:3620][http-nio-40045-exec-3] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:45:59.318:3620][http-nio-40045-exec-3] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:45:59.319:3621][http-nio-40045-exec-3] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:46:01.021:5323][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:46:43.747:733][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 25796 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:46:43.750:736][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:46:45.046:2032][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:46:45.056:2042][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:46:45.056:2042][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:46:45.057:2043][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:46:45.177:2163][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:46:45.177:2163][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1386 ms
+[2023-09-23 17:46:45.219:2205][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:46:45.219:2205][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:46:45.693:2679][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:46:45.710:2696][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:46:45.768:2754][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:46:45.769:2755][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:46:45.769:2755][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:46:45.769:2755][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:46:45.786:2772][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:46:45.787:2773][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 73 ms
+[2023-09-23 17:46:45.797:2783][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:46:45.823:2809][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:46:45.825:2811][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:46:45.835:2821][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.528 seconds (JVM running for 3.034)
+[2023-09-23 17:46:48.374:5360][http-nio-40045-exec-2] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:46:48.375:5361][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:46:48.375:5361][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-23 17:47:01.029:18015][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:47:21.927:742][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 29012 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:47:21.929:744][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:47:23.229:2044][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:47:23.239:2054][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:47:23.240:2055][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:47:23.240:2055][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:47:23.370:2185][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:47:23.370:2185][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1400 ms
+[2023-09-23 17:47:23.405:2220][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:47:23.405:2220][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:47:23.858:2673][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:47:23.875:2690][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:47:23.934:2749][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:47:23.934:2749][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:47:23.934:2749][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:47:23.935:2750][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:47:23.949:2764][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:47:23.950:2765][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 71 ms
+[2023-09-23 17:47:23.958:2773][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:47:23.984:2799][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:47:23.987:2802][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:47:23.998:2813][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.518 seconds (JVM running for 3.019)
+[2023-09-23 17:47:27.926:6741][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:47:27.926:6741][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:47:27.927:6742][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:47:54.510:742][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 25704 (C:\Users\기현\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\기현\IdeaProjects\boot-echo-server)
+[2023-09-23 17:47:54.513:745][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:47:55.853:2085][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:47:55.862:2094][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:47:55.863:2095][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:47:55.863:2095][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:47:55.986:2218][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:47:55.986:2218][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1432 ms
+[2023-09-23 17:47:56.027:2259][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:47:56.028:2260][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:47:56.466:2698][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:47:56.483:2715][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:47:56.539:2771][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:47:56.539:2771][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:47:56.540:2772][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:47:56.540:2772][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:47:56.554:2786][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:47:56.554:2786][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 67 ms
+[2023-09-23 17:47:56.564:2796][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:47:56.587:2819][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:47:56.589:2821][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:47:56.599:2831][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.538 seconds (JVM running for 3.03)
+[2023-09-23 17:47:57.222:3454][http-nio-40045-exec-2] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:47:57.222:3454][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:47:57.223:3455][http-nio-40045-exec-2] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-23 17:48:01.027:7259][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted
+[2023-09-23 17:49:45.923:803][main] [] INFO  kr.co.ksite.app.BootApplication - Starting BootApplication using Java 1.8.0_251 on Key with PID 13808 (C:\Users\湲고쁽\IdeaProjects\boot-echo-server\build\classes\java\main started by Key in C:\Users\湲고쁽\IdeaProjects\boot-echo-server)
+[2023-09-23 17:49:45.925:805][main] [] INFO  kr.co.ksite.app.BootApplication - The following 3 profiles are active: "local", "server-local", "sys-local"
+[2023-09-23 17:49:47.296:2176][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 40045 (http)
+[2023-09-23 17:49:47.305:2185][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:49:47.306:2186][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:49:47.306:2186][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:49:47.430:2310][main] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:49:47.431:2311][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1465 ms
+[2023-09-23 17:49:47.470:2350][main] [] INFO  i.m.elastic.ElasticMeterRegistry - publishing metrics to elastic every 1m
+[2023-09-23 17:49:47.471:2351][main] [] INFO  i.m.c.i.push.PushMeterRegistry - publishing metrics for ElasticMeterRegistry every 1m
+[2023-09-23 17:49:48.032:2912][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-40045"]
+[2023-09-23 17:49:48.049:2929][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 40045 (http) with context path ''
+[2023-09-23 17:49:48.106:2986][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 15521 (http)
+[2023-09-23 17:49:48.106:2986][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:49:48.106:2986][main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-23 17:49:48.106:2986][main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+[2023-09-23 17:49:48.121:3001][main] [] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-23 17:49:48.121:3001][main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 68 ms
+[2023-09-23 17:49:48.131:3011][main] [] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/syshealth'
+[2023-09-23 17:49:48.153:3033][main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15521"]
+[2023-09-23 17:49:48.155:3035][main] [] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 15521 (http) with context path ''
+[2023-09-23 17:49:48.165:3045][main] [] INFO  kr.co.ksite.app.BootApplication - Started BootApplication in 2.709 seconds (JVM running for 3.252)
+[2023-09-23 17:49:48.812:3692][http-nio-40045-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-23 17:49:48.812:3692][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-23 17:49:48.813:3693][http-nio-40045-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-23 17:50:01.039:15919][elastic-metrics-publisher] [] WARN  i.m.c.i.push.PushMeterRegistry - Unexpected exception thrown while publishing metrics for ElasticMeterRegistry
+java.lang.RuntimeException: java.net.SocketTimeoutException: connect timed out
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:247)
+	at io.micrometer.elastic.ElasticMeterRegistry.publish(ElasticMeterRegistry.java:189)
+	at io.micrometer.core.instrument.push.PushMeterRegistry.publishSafely(PushMeterRegistry.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at io.micrometer.core.ipc.http.HttpUrlConnectionSender.send(HttpUrlConnectionSender.java:104)
+	at io.micrometer.core.ipc.http.HttpSender$Request$Builder.send(HttpSender.java:306)
+	at io.micrometer.elastic.ElasticMeterRegistry.determineMajorVersionIfNeeded(ElasticMeterRegistry.java:243)
+	... 9 common frames omitted

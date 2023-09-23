@@ -1,0 +1,42 @@
+#mybatis (공통 사용)
+#mybatis:
+#  type-aliases-package:
+#  mapper-locations:
+#    - classpath:mybatis/dao/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    jdbc-type-for-null: 'NULL'
+#
+#--- #LOCAL
+#spring:
+#  config:
+#    activate:
+#      on-profile: "db-local"
+#  datasource:
+#    jdbc-url:
+#    username:
+#    password:
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#    maximum-pool-size: 1
+#
+#--- #DEV
+#spring:
+#  config:
+#    activate:
+#      on-profile: "db-dev"
+#  datasource:
+#    jdbc-url:
+#    username:
+#    password:
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#
+#--- #PROD
+#spring:
+#  config:
+#    activate:
+#      on-profile: "db-prod"
+#  datasource:
+#    jdbc-url:
+#    username:
+#    password:
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
